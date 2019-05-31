@@ -33,6 +33,13 @@ app.get('/carros', function (req, res) {
     });
 });
 
+app.get('/mantenimientos', function (req, res) {
+  dbConn.query('SELECT * FROM mantenimientos', function (error, results, fields) {
+      if (error) throw error;
+      return res.send({ error: false, data: results, message: 'car list.' });
+  });
+});
+
 
 
 // Add a new user
