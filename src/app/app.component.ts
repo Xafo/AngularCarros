@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Carros';
+  public title = 'My Angular App';
+
+  constructor() {
+    // this.isAuthenticated = false;
+   }
 }
+
