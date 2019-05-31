@@ -2,7 +2,7 @@
 var dbConn = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: '',
+  password: 'root',
   database: 'carros'
 });
 // connect to database

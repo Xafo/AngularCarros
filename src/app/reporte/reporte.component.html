@@ -16,19 +16,12 @@
       <th>Encargado</th>
       <th>Kilometraje Actual</th>
 
-      <tr ng-repeat="x in names">
-          <td>{{ x.Name }}</td>
-          <td>{{ x.Country }}</td>
+      <tr ng-for="x in names">
+          <td>{{ Name }}</td>
+          <td>{{ Country }}</td>
         </tr>
 
       </table>
 </div>
-<script>
-    var app = angular.module('myApp', []);
-    app.controller('customersCtrl', function($scope, $http) {
-        $http.get("localhost:/3000/carros")
-        .then(function (response) {$scope.names = response.data.records;});
-    });
-    </script>
   </div>
 </div>
