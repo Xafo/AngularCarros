@@ -1,6 +1,34 @@
-<div class="hero"><p>
-  reporte works!
-</p></div>
-<p>
-  reporte works!
-</p>
+<div cng-app="myApp" ng-controller="customersCtrl">
+  <h1>Carros Disponibles</h1>
+  <div class="mdc-layout-grid__inner">
+   <div class="mdc-layout-grid__cell">
+    <table>
+      <th>Codigo Ares Sun</th>
+      <th>Marca</th>
+      <th>Modelo</th>
+      <th>Año</th>
+      <th>Color</th>
+      <th>Placa</th>
+      <th>Codigo Motor</th>
+      <th>VIM</th>
+      <th>Cilindraje</th>
+      <th>Fecha Matricula</th>
+      <th>Encargado</th>
+      <th>Kilometraje Actual</th>
+
+      <tr ng-repeat="x in names">
+          <td>{{ x.Name }}</td>
+          <td>{{ x.Country }}</td>
+        </tr>
+
+      </table>
+</div>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('customersCtrl', function($scope, $http) {
+        $http.get("localhost:/3000/carros")
+        .then(function (response) {$scope.names = response.data.records;});
+    });
+    </script>
+  </div>
+</div>
