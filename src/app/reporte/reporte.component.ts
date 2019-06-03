@@ -8,13 +8,15 @@ import { ApiService } from '../api.service';
   templateUrl: './reporte.component.html',
   styleUrls: ['./reporte.component.css']
 })
+
 export class ReporteComponent implements OnInit {
+
 carros$: CarrosModule[];
 constructor(private apiService: ApiService) { }
 
 ngOnInit() {
   return this.apiService.getCarros()
-  .subscribe(data => this.carros$ =data);
+  .subscribe(data => {data=this.carros$ });
 }
 
 

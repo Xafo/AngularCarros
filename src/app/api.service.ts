@@ -17,7 +17,7 @@ apiUrl = 'http://localhost:3000/carros';
   constructor(private _http: HttpClient) { }
 
 getCarros(){
-  return this._http.get<CarrosModule[]>(this.apiUrl);
+  return this._http.get<CarrosModule[]>(this.apiUrl)
 }
 }
 

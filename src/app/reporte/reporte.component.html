@@ -3,6 +3,7 @@
   <div class="mdc-layout-grid__inner">
    <div class="mdc-layout-grid__cell">
     <table>
+      <tr>
       <th>Codigo Ares Sun</th>
       <th>Marca</th>
       <th>Modelo</th>
@@ -15,10 +16,37 @@
       <th>Fecha Matricula</th>
       <th>Encargado</th>
       <th>Kilometraje Actual</th>
-      <td *ngFor='let Carro of carros$'>
-        {{Carro.Modelo}}
-      </td>
+    </tr>
+    <tr *ngFor="let Carro of carros$">
+        <td>{{Carro.CodAresSun}}</td>
+        <td>{{Carro.CodMarca}}</td>
+        <td>{{Carro.Ano}}</td>
+        <td>{{Carro.Color}}</td>
+        <td>{{Carro.Placa}}</td>
+        <td>{{Carro.SerieMotor}}</td>
+        <td>{{Carro.VIM}}</td>
+        <td>{{Carro.Cilindraje}}</td>
+        <td>{{Carro.FechaDeMatricula}}</td>
+        <td>{{Carro.CodEnc}}</td>
+        <td>{{Carro.KmActual
+    </tr>
     </table>
+
+    <div *ngFor="let Carro of carros$">
+      <td>{{Carro.CodAresSun}}</td>
+      <td>{{Carro.CodMarca}}</td>
+      <td>{{Carro.Ano}}</td>
+      <td>{{Carro.Color}}</td>
+      <td>{{Carro.Placa}}</td>
+      <td>{{Carro.SerieMotor}}</td>
+      <td>{{Carro.VIM}}</td>
+      <td>{{Carro.Cilindraje}}</td>
+      <td>{{Carro.FechaDeMatricula}}</td>
+      <td>{{Carro.CodEnc}}</td>
+      <td>{{Carro.KmActual
+
+      }}</td>
+    </div>
 
 </div>
   </div>
