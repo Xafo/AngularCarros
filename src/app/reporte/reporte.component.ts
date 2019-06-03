@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import {  CarrosModule } from '../models/Carros';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-reporte',
@@ -6,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reporte.component.css']
 })
 export class ReporteComponent implements OnInit {
+carros$: CarrosModule[];
+constructor(private apiService: ApiService) { }
 
-  constructor() { }
+ngOnInit() {
+  return this.apiService.getCarros()
+  .subscribe(data => this.carros$ =data);
+}
 
-  ngOnInit() {
-  }
 
 }

@@ -15,13 +15,11 @@
       <th>Fecha Matricula</th>
       <th>Encargado</th>
       <th>Kilometraje Actual</th>
+      <td *ngFor='let Carro of carros$'>
+        {{Carro.Modelo}}
+      </td>
+    </table>
 
-      <tr ng-for="x in names">
-          <td>{{ Name }}</td>
-          <td>{{ Country }}</td>
-        </tr>
-
-      </table>
 </div>
   </div>
 </div>

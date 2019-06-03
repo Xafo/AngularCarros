@@ -14,6 +14,7 @@ import { HomeComponent } from './home/Home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { ReporteComponent } from './reporte/reporte.component';
+import { ApiService } from './api.service';
 
 @NgModule({
   declarations: [
@@ -28,17 +29,20 @@ import { ReporteComponent } from './reporte/reporte.component';
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    HttpModule,
     MatToolbarModule,
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
     MatTableModule,
+    MatToolbarModule,
+    MatMenuModule,
     MatDividerModule,
     MatProgressSpinnerModule,
     MatSelectModule,
     MatInputModule
   ],
-  providers: [RouterModule],
+  providers: [RouterModule,ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
