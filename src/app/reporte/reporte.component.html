@@ -1,41 +1,43 @@
 <div cng-app="myApp" ng-controller="customersCtrl">
   <h1>Carros Disponibles</h1>
-  <div class="mdc-layout-grid__inner">
+ <div class="mdc-layout-grid__inner">
    <div class="mdc-layout-grid__cell">
-    <table class="table table-hover">
-        <thead>
-      <tr>
-      <th>Codigo Ares Sun</th>
-      <th>Marca</th>
-      <th>Modelo</th>
-      <th>Año</th>
-      <th>Color</th>
-      <th>Placa</th>
-      <th>Codigo Motor</th>
-      <th>VIM</th>
-      <th>Cilindraje</th>
-      <th>Fecha Matricula</th>
-      <th>Encargado</th>
-      <th>Kilometraje Actual</th>
+     <table class="table table-sm table-hover">
+        <thead class="thead-dark">
+    <tr>
+      <th scope="col">Codigo Ares Sun</th>
+      <th scope="col">Marca</th>
+      <th scope="col">Modelo</th>
+      <th scope="col">Año</th>
+      <th scope="col">Color</th>
+      <th scope="col">Placa</th>
+      <th scope="col">Codigo Motor</th>
+      <th scope="col">VIM</th>
+      <th scope="col">Cilindraje</th>
+      <th scope="col">Fecha Matricula</th>
+      <th scope="col">Encargado</th>
+      <th scope="col">Kilometraje Actual</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let c of cars.data ">
-        <td>{{c.CodAresSun}}</td>
-        <td>{{c.CodMarca}}</td>
-        <td>{{c.Ano}}</td>
-        <td>{{c.Color}}</td>
-        <td>{{c.Placa}}</td>
-        <td>{{c.SerieMotor}}</td>
-        <td>{{c.VIM}}</td>
-        <td>{{c.Cilindraje}}</td>
-        <td>{{c.FechaDeMatricula}}</td>
-        <td>{{c.CodEnc}}</td>
-        <td>{{c.KmActual}}</td>
+    <tr *ngFor="let c of cars.data" scope="row">
+      <th></th>
+        <td >{{c.CodAresSun}}</td>
+        <td >{{c.CodMarca}}</td>
+        <td >{{c.Ano}}</td>
+        <td >{{c.Color}}</td>
+        <td >{{c.Placa}}</td>
+        <td >{{c.SerieMotor}}</td>
+        <td >{{c.VIM}}</td>
+        <td >{{c.Cilindraje}}</td>
+        <td >{{c.FechaDeMatricula}}</td>
+        <td >{{c.CodEnc}}</td>
+        <td >{{c.KmActual}}</td>
     </tr>
   </tbody>
     </table>
 </div>
   </div>
+
 
 </div>

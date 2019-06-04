@@ -14,7 +14,6 @@ export class ReporteComponent implements OnInit {
 constructor(private apiService: ApiService) {}
 
 cars: CarrosModule;
-
 ngOnInit() {
   this.getCar();
 }
