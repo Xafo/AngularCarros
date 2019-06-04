@@ -86,7 +86,6 @@ a, a:hover, a:focus {
     text-decoration: none;
     transition: all 0.3s;
 }
-
 #sidebar {
     /* don't forget to add all the previously mentioned styles here too */
     background: #7386D5;
@@ -128,7 +127,10 @@ ul ul a {
     padding-left: 30px !important;
     background: #6d7fcc;
 }
-
+table {
+  float: inherit;
+  margin-left: 10%;
+}
 @media (max-width: 768px) {
   /* Reversing the behavior of the sidebar:
      it'll be rotated vertically and off canvas by default,
@@ -167,5 +169,13 @@ ul ul a {
   }
   #sidebarCollapse.active span:last-of-type {
       transform: rotate(-45deg) translate(1px, -1px);
+  }
+  h1{
+    font-size: 2ch;
+    font-style: oblique;
+    text-align: left;
+  }
+  table{
+    margin: 0%;
   }
 }
