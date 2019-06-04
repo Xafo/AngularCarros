@@ -129,19 +129,7 @@ ul ul a {
 }
 table {
   float: inherit;
-  margin-left: 5%;
-  width: 100%;
-}
-.botonMas{
-  float: right;
-}
-.thead-Color{
-  color: #fff;
-  background-color: #0d3d5d;
-}
-td{
-  text-align: center;
-  border-bottom: #0d3d5d solid;
+  margin-left: 10%;
 }
 @media (max-width: 768px) {
   /* Reversing the behavior of the sidebar:

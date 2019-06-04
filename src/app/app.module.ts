@@ -15,6 +15,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { ReporteComponent } from './reporte/reporte.component';
 import { ApiService } from './api.service';
+import { IngresoComponent } from './ingreso/ingreso.component';
+import { NewCarComponent } from './new-car/new-car.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { ApiService } from './api.service';
     HomeComponent,
     LoginComponent,
     ReporteComponent,
+    IngresoComponent,
+    NewCarComponent,
   ],
   imports: [
     AppRoutingModule,

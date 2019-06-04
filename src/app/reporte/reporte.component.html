@@ -43,7 +43,7 @@
 
 <h1>Carros Disponibles</h1>
 <table class="table table-sm table-hover">
- <thead class="thead-dark">
+ <thead class="thead-Color">
     <tr>
       <th scope="col">Cod Ares Sun</th>
       <th scope="col">Marca</th>
@@ -56,6 +56,7 @@
       <th scope="col">Encargado</th>
       <th scope="col">Km Actual</th>
       <th scope="col">Ubicacion</th>
+      <th scope="col">Delete</th>
     </tr>
   </thead>
   <tbody>
@@ -71,9 +72,11 @@
         <td >{{c.CodEnc}}</td>
         <td >{{c.KmActual}}</td>
         <td>{{c.Ubicacion}}</td>
+        <td><button mat-mini-fab color="warn">Del</button> <button mat-mini-fab color="accent">Mod</button></td>
     </tr>
   </tbody>
     </table>
+    <button mat-mini-fab color="primary" class="botonMas">+</button>
   </div>
   </div>
 
