@@ -1,43 +1,95 @@
-<div cng-app="myApp" ng-controller="customersCtrl">
-  <h1>Carros Disponibles</h1>
- <div class="mdc-layout-grid__inner">
-   <div class="mdc-layout-grid__cell">
-     <table class="table table-sm table-hover">
-        <thead class="thead-dark">
+ <div class="wrapper">
+
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <img src="../../assets/DMS -01.png" alt="" style="width: 100px; margin-left: 20% ;">
+            </div>
+
+            <ul class="list-unstyled components">
+              <li>
+                    <a href="/reportes">Carros Disponibles</a>
+              </li>
+
+            <li>
+                  <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Informes</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Gasto Por Sucursal</a>
+                        </li>
+                        <li>
+                            <a href="#">Consumo</a>
+                        </li>
+                        <li>
+                            <a href="#">Repuestos</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Rotacion de Carros</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+
+<div id="content">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-info">
+                <i class="fas fa-align-left"></i>
+                <span>Menu</span>
+            </button>
+
+        </div>
+    </nav>
+
+
+<h1>Carros Disponibles</h1>
+<table class="table table-sm table-hover">
+ <thead class="thead-dark">
     <tr>
-      <th scope="col">Codigo Ares Sun</th>
+      <th scope="col">Cod Ares Sun</th>
       <th scope="col">Marca</th>
       <th scope="col">Modelo</th>
       <th scope="col">Año</th>
       <th scope="col">Color</th>
       <th scope="col">Placa</th>
-      <th scope="col">Codigo Motor</th>
-      <th scope="col">VIM</th>
       <th scope="col">Cilindraje</th>
       <th scope="col">Fecha Matricula</th>
       <th scope="col">Encargado</th>
-      <th scope="col">Kilometraje Actual</th>
+      <th scope="col">Km Actual</th>
+      <th scope="col">Ubicacion</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let c of cars.data" scope="row">
-      <th></th>
-        <td >{{c.CodAresSun}}</td>
+        <td >{{c.CodigoAresSun}}</td>
         <td >{{c.CodMarca}}</td>
+        <td >{{c.Modelo}}</td>
         <td >{{c.Ano}}</td>
         <td >{{c.Color}}</td>
         <td >{{c.Placa}}</td>
-        <td >{{c.SerieMotor}}</td>
-        <td >{{c.VIM}}</td>
         <td >{{c.Cilindraje}}</td>
         <td >{{c.FechaDeMatricula}}</td>
         <td >{{c.CodEnc}}</td>
         <td >{{c.KmActual}}</td>
+        <td>{{c.Ubicacion}}</td>
     </tr>
   </tbody>
     </table>
-</div>
   </div>
+  </div>
+  <script>
+      $(document).ready(function () {
 
+      $('#sidebarCollapse').on('click', function () {
+          $('#sidebar').toggleClass('active');
+      });
 
-</div>
+      });
+      </script>

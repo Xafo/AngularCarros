@@ -1,6 +1,6 @@
 export class CarrosModule
 {
-CodAresSun: string;
+CodigoAresSun: string;
 CodMarca: number;
 Modelo: string;
 Ano: number;
@@ -12,4 +12,5 @@ Cilindraje: string;
 FechaDeMatricula: string;
 CodEnc: string;
 KmActual: string;
+Ubicacion: string;
 }
