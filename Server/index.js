@@ -33,7 +33,7 @@ app.get('/carros', function (req, res) {
         return res.send({ error: false, data: results, message: 'car list.' });
     });
 });
-
+/*
 app.get('/mantenimientos', function (req, res) {
   dbConn.query('SELECT * FROM mantenimientos', function (error, results, fields) {
       if (error) throw error;
@@ -89,7 +89,7 @@ app.delete('/user', function (req, res) {
         return res.send({ error: false, data: results, message: 'User has been updated successfully.' });
     });
 });
-
+*/
 // set port
 app.listen(3000, function () {
     console.log('Node app is running on port 3000');

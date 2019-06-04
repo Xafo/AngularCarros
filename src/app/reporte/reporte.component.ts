@@ -11,13 +11,17 @@ import { ApiService } from '../api.service';
 
 export class ReporteComponent implements OnInit {
 
-carros$: CarrosModule[];
-constructor(private apiService: ApiService) { }
+constructor(private apiService: ApiService) {}
+
+cars: CarrosModule;
 
 ngOnInit() {
-  return this.apiService.getCarros()
-  .subscribe(data => {data=this.carros$ });
+  this.getCar();
 }
 
+getCar(){
+  this.apiService.getCar()
+  .subscribe((cars: CarrosModule) => (this.cars = cars));
+}
 
 }
