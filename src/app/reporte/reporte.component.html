@@ -1,5 +1,4 @@
  <div class="wrapper">
-
         <!-- Sidebar -->
         <nav id="sidebar">
             <div class="sidebar-header">
@@ -8,7 +7,7 @@
 
             <ul class="list-unstyled components">
               <li>
-                    <a mat-button href="/reportes">Carros Disponibles</a>
+                    <a mat-button (click)="CDisp()">Unidades Activas</a>
               </li>
 
             <li>
@@ -34,15 +33,19 @@
             </ul>
         </nav>
 
-
+<!-- Content -->
 <div id="content">
 
-<button type="button" id="sidebarCollapse" class="btn btn-info">
-<i class="fas fa-align-left"></i>
-</button>
+<div *ngIf="CShowD">
+  <app-carros-disp></app-carros-disp>
+</div>
+<div *ngIf="!CShowD">
+  <app-home></app-home>
+</div>
 
-<app-carros-disp></app-carros-disp>
 
-  </div>
+</div>
+<!-- /Content -->
+
   </div>
 

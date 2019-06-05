@@ -13,8 +13,15 @@ export class ReporteComponent implements OnInit {
 
 constructor(private apiService: ApiService) {}
 
+CShowD = true;
+
+CDisp(){
+  this.CShowD = !this.CShowD;
+}
+
 cars: CarrosModule;
 ngOnInit() {
+
 }
 
 }

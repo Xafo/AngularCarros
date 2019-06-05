@@ -12,6 +12,7 @@ router.get('/carros', async function(req: Request, res: Response, next: NextFunc
   }
 });
 
-router.post('/carros',async function(req,res,next){
+// tslint:disable-next-line: only-arrow-functions
+router.post('/carros', async function( req , res , next ) {
   res.send();
 })

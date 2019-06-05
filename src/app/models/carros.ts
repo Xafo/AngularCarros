@@ -9,12 +9,12 @@ Placa: string;
 SerieMotor: string;
 VIM: string;
 Cilindraje: string;
-FechaDeMatricula: string;
+FechaDeMatricula: Date;
 CodEnc: string;
 KmActual: string;
 Ubicacion: string;
 
-constructor(CodigoAresSun: string,CodMarca: number,Modelo: string,Ano: number, Color: string, Placa: string,SerieMotor: string,VIM: string,Cilindraje: string,FechaDeMatricula: string,CodEnc: string,KmActual: string,Ubicacion: string){
+constructor(CodigoAresSun: string,CodMarca: number,Modelo: string,Ano: number, Color: string, Placa: string,SerieMotor: string,VIM: string,Cilindraje: string,FechaDeMatricula: Date,CodEnc: string,KmActual: string,Ubicacion: string){
     this.CodigoAresSun = CodigoAresSun;
     this.CodMarca = CodMarca;
     this.Modelo = Modelo;

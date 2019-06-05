@@ -143,6 +143,9 @@ td{
   text-align: center;
   border-bottom: #0d3d5d solid;
 }
+th{
+  text-align: center;
+}
 @media (max-width: 768px) {
   /* Reversing the behavior of the sidebar:
      it'll be rotated vertically and off canvas by default,
@@ -182,8 +185,7 @@ td{
   #sidebarCollapse.active span:last-of-type {
       transform: rotate(-45deg) translate(1px, -1px);
   }
-  h1{
-    font-size: 2ch;
+  h2{
     font-style: oblique;
     text-align: left;
   }

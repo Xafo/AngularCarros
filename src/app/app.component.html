@@ -1,16 +1,14 @@
 <mat-toolbar color="red" class="expanded-toolbar z-index: -1">
+    <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+        <button type="button" id="sidebarCollapse" class="btn btn-outline-primary">
+        <i class="fas fa-align-right"></i>
+        </button>
+        <button mat-button routerLink="/"><mat-icon>home</mat-icon></button>
+        <button mat-button routerLink="/ingreso">Nuevo mantenimiento</button>
+        <button mat-button routerLink="/reportes">Reportes</button>
+        <!-- <button mat-button *ngIf="!isAuthenticated" (click)="login()"> Login </button>
+        <button mat-button *ngIf="isAuthenticated" (click)="logout()"> Logout </button> -->
+      </div>
   <button mat-button routerLink="/"><img src="../assets/RV.png" alt="" style="width: 90px;"></button>
-
-  <div fxLayout="row" fxShow="false" fxShow.gt-sm>
-    <button mat-button routerLink="/"><mat-icon>home</mat-icon></button>
-    <button mat-button routerLink="/ingreso">Nuevo mantenimiento</button>
-    <button mat-button routerLink="/reportes">Reportes</button>
-    <!-- <button mat-button *ngIf="!isAuthenticated" (click)="login()"> Login </button>
-    <button mat-button *ngIf="isAuthenticated" (click)="logout()"> Logout </button> -->
-  </div>
 </mat-toolbar>
-
-
-
-
 <router-outlet></router-outlet>

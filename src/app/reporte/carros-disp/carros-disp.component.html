@@ -1,4 +1,12 @@
-<h1>Carros Disponibles</h1>
+<Div class="navbar">
+<h2>Unidades Activas</h2>
+<button mat-mini-fab color="primary" class="buttonMas" (click)="toggleNew()">+</button>
+</Div>
+
+<div *ngIf="NCar">
+  <app-new-car></app-new-car>
+</div>
+<div *ngIf="!NCar">
 <table class="table table-sm table-hover">
  <thead class="thead-Color">
     <tr>
@@ -33,4 +41,5 @@
     </tr>
   </tbody>
     </table>
-    <button mat-mini-fab color="primary" class="buttonMas" (click)="toggleChild()">+</button>
+
+  </div>
