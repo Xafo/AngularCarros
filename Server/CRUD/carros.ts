@@ -11,3 +11,7 @@ router.get('/carros', async function(req: Request, res: Response, next: NextFunc
     return next(err);
   }
 });
+
+router.post('/carros',async function(req,res,next){
+  res.send();
+})

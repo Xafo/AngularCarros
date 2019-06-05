@@ -33,6 +33,27 @@ app.get('/carros', function (req, res) {
         return res.send({ error: false, data: results, message: 'car list.' });
     });
 });
+
+/*app.post('/carros', function (req, res) {
+
+  let user = req.body.user;
+
+  dbConn.query("INSERT INTO `carros`.`carrosrv` values ? ",
+  { user: user },
+  function (error, results, fields) {
+      if (error) throw error;
+      return res.send({ error: false, data: results, message: 'New user has been created successfully.' });
+  });
+});*/
+//END OF POST
+
+// EJEMPLO POST
+// INSERT INTO `carros`.`carrosrv`
+//   (`CodigoAresSun`, `CodMarca`, `Modelo`, `Ano`, `Color`, `Placa`, `SerieMotor`, `VIM`, `Cilindraje`, `FechaDeMatricula`, `CodEnc`, `KmActual`, `Ubicacion`)
+// VALUES(
+// 'RV049','TOYOTA','HILUX','2018','ROJO-METALICO','HAA9651','2GD-4461240','8AJFB8CB101554933','2393','2019-07-31','EDGARDO ROMERO','50122','CHOLUTECA'
+// );
+
 /*
 app.get('/mantenimientos', function (req, res) {
   dbConn.query('SELECT * FROM mantenimientos', function (error, results, fields) {
@@ -44,19 +65,7 @@ app.get('/mantenimientos', function (req, res) {
 
 
 // Add a new user
-app.post('/user', function (req, res) {
 
-    let user = req.body.user;
-
-    if (!user) {
-        return res.status(400).send({ error:true, message: 'Please provide user' });
-    }
-
-    dbConn.query("INSERT INTO carrosrv values ? ", { user: user }, function (error, results, fields) {
-        if (error) throw error;
-        return res.send({ error: false, data: results, message: 'New user has been created successfully.' });
-    });
-});
 
 
 //  Update user with id

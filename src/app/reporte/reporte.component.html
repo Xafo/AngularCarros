@@ -41,42 +41,8 @@
 <i class="fas fa-align-left"></i>
 </button>
 
-<h1>Carros Disponibles</h1>
-<table class="table table-sm table-hover">
- <thead class="thead-Color">
-    <tr>
-      <th scope="col">Cod Ares Sun</th>
-      <th scope="col">Marca</th>
-      <th scope="col">Modelo</th>
-      <th scope="col">Año</th>
-      <th scope="col">Color</th>
-      <th scope="col">Placa</th>
-      <th scope="col">Cilindraje</th>
-      <th scope="col">Fecha Matricula</th>
-      <th scope="col">Encargado</th>
-      <th scope="col">Km Actual</th>
-      <th scope="col">Ubicacion</th>
-      <th scope="col">Delete</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let c of cars.data" scope="row">
-        <td >{{c.CodigoAresSun}}</td>
-        <td >{{c.CodMarca}}</td>
-        <td >{{c.Modelo}}</td>
-        <td >{{c.Ano}}</td>
-        <td >{{c.Color}}</td>
-        <td >{{c.Placa}}</td>
-        <td >{{c.Cilindraje}}</td>
-        <td >{{c.FechaDeMatricula}}</td>
-        <td >{{c.CodEnc}}</td>
-        <td >{{c.KmActual}}</td>
-        <td>{{c.Ubicacion}}</td>
-        <td><button mat-mini-fab color="warn">Del</button> <button mat-mini-fab color="accent">Mod</button></td>
-    </tr>
-  </tbody>
-    </table>
-    <button mat-mini-fab color="primary" class="botonMas">+</button>
+<app-carros-disp></app-carros-disp>
+
   </div>
   </div>
 

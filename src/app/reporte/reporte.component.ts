@@ -15,13 +15,6 @@ constructor(private apiService: ApiService) {}
 
 cars: CarrosModule;
 ngOnInit() {
-  this.getCar();
 }
-
-getCar(){
-  this.apiService.getCar()
-  .subscribe((cars: CarrosModule) => (this.cars = cars));
-}
-
 
 }
