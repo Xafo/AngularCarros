@@ -1,13 +1,14 @@
 <Div class="navbar">
-<h2>Unidades Activas</h2>
-<button mat-mini-fab color="primary" class="buttonMas" (click)="toggleNew()">+</button>
+<h2  *ngIf="!NCar">Unidades Activas</h2>
+<button mat-mini-fab color="primary" class="buttonMas" *ngIf="!NCar" (click)="toggleNew()">+</button>
 </Div>
 
 <div *ngIf="NCar">
   <app-new-car></app-new-car>
 </div>
 <div *ngIf="!NCar">
-<table class="table table-sm table-hover">
+
+<table class="table table-sm table-hover table-striped ">
  <thead class="thead-Color">
     <tr>
       <th scope="col">Cod Ares Sun</th>

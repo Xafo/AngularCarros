@@ -1,3 +1,58 @@
-<p>
-  new-car works!
-</p>
+<div class="card" style="">
+    <div class="card-body">
+      <div class="">
+        <h2>Datos Unidad por registrar</h2>
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm" >
+
+            <div class="form-group ">
+              <label for="CodAS">Codigo Ares Sun</label>
+              <input type="text" id="CodAS" class="form-control" ngModel name="CodAS" required>
+            </div>
+
+            <div class="form-group ">
+                <label for="Marca">Marca</label>
+                <input type="text" id="Marca" class="form-control" ngModel name="Marca" required>
+            </div>
+
+          <div class="form-group">
+              <label for="Modelo">Modelo</label>
+              <input type="text" id="Modelo" class="form-control" ngModel name="Modelo" required>
+          </div>
+          <div class="form-group">
+              <label for="Ano">Año</label>
+              <input type="text" id="Ano" class="form-control" ngModel name="Ano" required>
+          </div>
+          <div class="form-group">
+              <label for="Color">Color</label>
+              <input type="text" id="Color" class="form-control" ngModel name="Color" required>
+          </div>
+          <div class="form-group">
+              <label for="Placa">Placa</label>
+              <input type="text" id="Placa" class="form-control" ngModel name="Placa" required>
+          </div>
+          <div class="form-group">
+              <label for="Cilindraje">Cilindraje</label>
+              <input type="text" id="Cilindraje" class="form-control" ngModel name="Cilindraje" required>
+          </div>
+          <div class="form-group">
+              <label for="FechaDeMatricula">Matricula</label>
+              <input type="date" id="FechaDeMatricula" class="form-control" ngModel name="FechaDeMatricula" required>
+          </div>
+          <div class="form-group">
+              <label for="CodEnc">Encargado</label>
+              <input type="text" id="CodEnc" class="form-control" ngModel name="CodEnc" required >
+          </div>
+          <div class="form-group">
+              <label for="KmActual">Kilometraje</label>
+              <input type="text" id="KmActual" class="form-control" ngModel name="KmActual" required >
+          </div>
+          <div class="form-group">
+              <label for="Ubicacion">Ubicacion Actual</label>
+              <input type="text" id="Ubicacion" class="form-control" ngModel name="Ubicacion" required>
+          </div>
+
+          <button class="btn btn-primary" type="submit" (click)="onSubmit()">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>

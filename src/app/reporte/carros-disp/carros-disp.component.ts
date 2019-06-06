@@ -13,17 +13,16 @@ export class CarrosDispComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   cars: CarrosModule;
-  NCar : boolean;
+  NCar: boolean;
 
-toggleNew(){
+toggleNew() {
 this.NCar = !this.NCar;
-
 }
 
   ngOnInit() {
     this.getCar();
   }
-  getCar(){
+  getCar() {
     this.apiService.getCar()
     .subscribe((cars: CarrosModule) => (this.cars = cars));
   }
