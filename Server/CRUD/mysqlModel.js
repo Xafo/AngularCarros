@@ -3,9 +3,9 @@ const dbConn = require('../Model/db');
 let mysqlModel = {};
 
 mysqlModel.insertCar = (dataCar, handler) => {
-  dbConn.connect(function (err, connect) {
+  dbConn.getConnection(function (err, getConnection) {
       if (err) {
-        connect.release();
+        getConnection.release();
           throw err;
       }
        dbConn.query('insert into pdv  SET ?', dataCar),

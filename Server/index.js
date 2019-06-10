@@ -11,7 +11,6 @@ router.use(bodyParser.urlencoded({
 }));
 var mysqlModel = require('./CRUD/mysqlModel');
 
-
 var dbConn = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -41,16 +40,12 @@ router.post('/carros', (req, res) => {
     'Color' : req.body.Col,
     'Placa': req.body.Placa
   };
-  mysqlModel.insertCar(dataCar, (err, data) => {
-      if(err){
-          console.log(err);
-          return res.status(500).jsonp({error:"Algo paso"});
-      }
-      dbConn.query('insert into pdv  SET ?', dataCar),
-      res.status(200).jsonp(data);
-  })
-});
+  dbConn.query('INSERT INTO carrosrv set ?', dataCar, function (error, results, fields) {
+	  if (error) throw error;
+	  res.end(JSON.stringify(results));
+	});
 
+});
 /*app.post('/carros', function (req, res) {
 
   let user = req.body.user;
