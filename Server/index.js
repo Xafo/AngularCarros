@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-
+var mysqlModel = require('./CRUD/mysqlModel');
 // default route
 // app.get('/', function (req, res) {
 //     return res.send({ error: true, message: 'hello' })
@@ -34,23 +34,25 @@ app.get('/carros', function (req, res) {
     });
 });
 
-app.post('/carros', async function(dataCar,handler) {
-  pool.getConnection(function (err, dbConn) {
-    if (err) {
-        dbConn.release();
-        throw err;
-    }
-    console.log('Conectado con el id:' + connection.threadId);
-    connection.query('insert into carrosrv set ?', dataCar),
-        (err, result) => {
-            if (!err) {
-                handler(null, {
-                    'resultado: ': result
-                });
-            }
-        }
+app.post('/carros/ncar', (req, res, next) => {
+  console.log('peticion: ', req.body);
+  const dataCar = {
+    cAS: req.body.CodAS,
+    Mar : req.body.Marca,
+    Mod : req.body.Modelo,
+    Yr  : req.body.Ano,
+    Col : req.body.Color,
+    Placa: req.body.Placa,
+  };
+  mysqlModel.insertCar(dataCar, (err, data) => {
+      if(err){
+          console.log(err);
+          return res.status(500).jsonp({error:"Algo paso"});
+      }
+      res.status(200).jsonp(data);
+  })
 });
-});
+
 /*app.post('/carros', function (req, res) {
 
   let user = req.body.user;
