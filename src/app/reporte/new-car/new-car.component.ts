@@ -8,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class NewCarComponent implements OnInit {
 
   constructor() { }
-  show: boolean = true;
+  show = true;
   ngOnInit() {
+  }
+
+  onSubmit() {
+
   }
 
 }

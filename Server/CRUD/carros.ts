@@ -13,6 +13,19 @@ router.get('/carros', async function(req: Request, res: Response, next: NextFunc
 });
 
 // tslint:disable-next-line: only-arrow-functions
-router.post('/carros', async function( req , res , next ) {
-  res.send();
-})
+router.post('/carros', async function( req , res, next) {
+  try {
+const dataCar = {
+  cAS: req.body.CodAS,
+  Mar : req.body.Marca,
+  Mod : req.body.Modelo,
+  Yr  : req.body.Ano,
+  Col : req.body.Color,
+  Placa: req.body.Placa,
+};
+res.send(dataCar);
+} catch (err) {
+  return next(err);
+}
+
+});

@@ -34,6 +34,23 @@ app.get('/carros', function (req, res) {
     });
 });
 
+app.post('/carros', async function(dataCar,handler) {
+  pool.getConnection(function (err, dbConn) {
+    if (err) {
+        dbConn.release();
+        throw err;
+    }
+    console.log('Conectado con el id:' + connection.threadId);
+    connection.query('insert into carrosrv set ?', dataCar),
+        (err, result) => {
+            if (!err) {
+                handler(null, {
+                    'resultado: ': result
+                });
+            }
+        }
+});
+});
 /*app.post('/carros', function (req, res) {
 
   let user = req.body.user;
