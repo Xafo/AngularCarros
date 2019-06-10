@@ -1,20 +1,17 @@
 var express = require('express');
-var app = express();
+var router = express();
 var bodyParser = require('body-parser');
 var mysql = require('mysql');
 var cors = require('cors');
 
-app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
+router.use(cors());
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({
     extended: true
 }));
 var mysqlModel = require('./CRUD/mysqlModel');
-// default route
-// app.get('/', function (req, res) {
-//     return res.send({ error: true, message: 'hello' })
-// });
-// connection configurations
+
+
 var dbConn = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -26,29 +23,30 @@ var dbConn = mysql.createConnection({
 dbConn.connect();
 
 
-// Retrieve all users
-app.get('/carros', function (req, res) {
+// Retrieve all cars
+router.get('/carros', function (req, res) {
     dbConn.query('SELECT * FROM carrosrv', function (error, results, fields) {
         if (error) throw error;
         return res.send({ error: false, data: results, message: 'car list.' });
     });
 });
 
-app.post('/carros/ncar', (req, res, next) => {
-  console.log('peticion: ', req.body);
+router.post('/carros', (req, res) => {
+  console.log('DATOS: ', req.body);
   const dataCar = {
-    cAS: req.body.CodAS,
-    Mar : req.body.Marca,
-    Mod : req.body.Modelo,
-    Yr  : req.body.Ano,
-    Col : req.body.Color,
-    Placa: req.body.Placa,
+    'CodigoAresSun' : req.body.cAS,
+    'CodMarca' : req.body.Mar,
+    'Modelo' : req.body.Mod,
+    'Ano'  : req.body.Yr,
+    'Color' : req.body.Col,
+    'Placa': req.body.Placa
   };
   mysqlModel.insertCar(dataCar, (err, data) => {
       if(err){
           console.log(err);
           return res.status(500).jsonp({error:"Algo paso"});
       }
+      dbConn.query('insert into pdv  SET ?', dataCar),
       res.status(200).jsonp(data);
   })
 });
@@ -119,8 +117,8 @@ app.delete('/user', function (req, res) {
 });
 */
 // set port
-app.listen(3000, function () {
+router.listen(3000, function () {
     console.log('Node app is running on port 3000');
 });
 
-module.exports = app;
+module.exports = router;
