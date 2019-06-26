@@ -1,34 +1,36 @@
 export interface CarrosModule {
   data: {
 CodigoAresSun: string;
-CodMarca: number;
+CodMarca: string;
 Modelo: string;
-Ano: number;
+Ano: string;
 Color: string;
 Placa: string;
 SerieMotor: string;
 VIM: string;
 Cilindraje: string;
-FechaDeMatricula: Date;
+FechaDeMatricula: string;
 CodEnc: string;
 KmActual: string;
 Ubicacion: string;
-};
+}
 // constructor(CodigoAresSun: string,CodMarca: number,Modelo: string,
 //   Ano: number, Color: string, Placa: string,SerieMotor: string,VIM: string,
 //   Cilindraje: string,FechaDeMatricula: Date,CodEnc: string,KmActual: string,Ubicacion: string){
-//     this.CodigoAresSun = CodigoAresSun;
-//     this.CodMarca = CodMarca;
-//     this.Modelo = Modelo;
-//     this.Ano = Ano;
-//     this.Color = Color;
-//     this.Placa = Placa;
-//     this.SerieMotor = SerieMotor;
-//     this.VIM = VIM;
-//     this.Cilindraje = Cilindraje;
-//     this.FechaDeMatricula = FechaDeMatricula;
-//     this.CodEnc = CodEnc;
-//     this.KmActual = KmActual;
-//     this.Ubicacion = Ubicacion;
+//     this.CodigoAresSun = this.data.CodigoAresSun;
+//     this.CodMarca = this.data.CodMarca;
+//     this.Modelo = this.data.Modelo;
+//     this.Ano =this.data.Ano;
+//     this.Color = this.data.Color;
+//     this.Placa = this.data.Placa;
+//     this.SerieMotor = this.data.SerieMotor;
+//     this.VIM = this.data.VIM;
+//     this.Cilindraje = this.data.Cilindraje;
+//     this.FechaDeMatricula = this.data.FechaDeMatricula;
+//     this.CodEnc =this.data.CodEnc;
+//     this.KmActual = this.data.KmActual;
+//     this.Ubicacion = this.data.Ubicacion;
 //   }
 }
+
+

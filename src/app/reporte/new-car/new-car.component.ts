@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter , Output, Input} from '@angular/core';
+import { Car } from '../../../../Server/Model/nCar';
+import { ApiService } from 'src/app/api.service';
+import { Router } from '@angular/router';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-new-car',
@@ -7,13 +11,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewCarComponent implements OnInit {
 
-  constructor() { }
+
+constructor(private apiService: ApiService) { }
+
   show = true;
-  ngOnInit() {
+
+  ngOnInit() { };
+
+  onSubmit(nCar) {
+    console.log(nCar.value);
+  this.apiService.postCar(nCar)
+  .subscribe( data => {alert(nCar);
+  this.ngOnInit();
+  });
   }
-
-  onSubmit() {
-
-  }
-
 }

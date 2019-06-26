@@ -35,6 +35,7 @@ import { CarrosDispComponent } from './reporte/carros-disp/carros-disp.component
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+// tslint:disable-next-line: deprecation
     HttpModule,
     MatToolbarModule,
     MatMenuModule,
@@ -48,7 +49,7 @@ import { CarrosDispComponent } from './reporte/carros-disp/carros-disp.component
     MatSelectModule,
     MatInputModule
   ],
-  providers: [RouterModule,ApiService],
+  providers: [RouterModule , ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

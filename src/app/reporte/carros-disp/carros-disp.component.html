@@ -4,7 +4,7 @@
 </Div>
 
 <div *ngIf="NCar">
-  <app-new-car></app-new-car>
+  <app-new-car (addList)='onaddCarro($event)'></app-new-car>
 </div>
 <div *ngIf="!NCar">
 

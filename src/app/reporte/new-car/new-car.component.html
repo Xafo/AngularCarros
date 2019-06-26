@@ -2,11 +2,11 @@
     <div class="card-body">
       <div class="">
         <h2>Datos Unidad por registrar</h2>
-        <form (ngSubmit)="onSubmit(f)" #f="ngForm" >
+        <form #carForm="ngForm" (ngSubmit)="onSubmit(carForm)" novalidate>
 
             <div class="form-group ">
-              <label for="CodAS">Codigo Ares Sun</label>
-              <input type="text" id="CodAS" class="form-control" ngModel name="CodAS" required>
+              <label for="CodigoAresSun">Codigo Ares Sun</label>
+              <input type="text" id="CodigoAresSun" class="form-control" ngModel name="CodigoAresSun" required >
             </div>
 
             <div class="form-group ">

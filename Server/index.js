@@ -4,12 +4,21 @@ var bodyParser = require('body-parser');
 var mysql = require('mysql');
 var cors = require('cors');
 
+router.use(function (req, res, next) {
+     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+     res.setHeader('Access-Control-Allow-Credentials', true);
+     next();
+ });
 router.use(cors());
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({
     extended: true
 }));
 var mysqlModel = require('./CRUD/mysqlModel');
+
+
 
 var dbConn = mysql.createConnection({
     host: 'localhost',
@@ -31,16 +40,22 @@ router.get('/carros', function (req, res) {
 });
 
 router.post('/carros', (req, res) => {
-  console.log('DATOS: ', req.body);
-  const dataCar = {
-    'CodigoAresSun' : req.body.cAS,
-    'CodMarca' : req.body.Mar,
-    'Modelo' : req.body.Mod,
-    'Ano'  : req.body.Yr,
-    'Color' : req.body.Col,
-    'Placa': req.body.Placa
+  const nCar = {
+    'CodigoAresSun' : req.body.CodigoAresSun,
+    'CodMarca' : req.body.CodMarca,
+    'Modelo' : req.body.Modelo,
+    'Ano'  : req.body.Ano,
+    'Color' : req.body.Color,
+    'Placa': req.body.Placa,
+    'SerieMotor': req.body.SerieMotor,
+    'VIM': req.body.VIM,
+    'Cilindraje': req.body.Cilindraje,
+    'FechaDeMatricula': req.body.FechaDeMatricula,
+    'CodEnc': req.body.CodEnc,
+    'KmActual': req.body.KmActual,
+    'Ubicacion': req.body.Ubicacion
   };
-  dbConn.query('INSERT INTO carrosrv set ?', dataCar, function (error, results, fields) {
+  dbConn.query('INSERT INTO carrosrv set ?', nCar, function (error, results, fields) {
 	  if (error) throw error;
 	  res.end(JSON.stringify(results));
 	});
