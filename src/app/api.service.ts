@@ -42,40 +42,9 @@ postCar(xCar){
   return this._http.post(this.apiUrl,xCar.value)
   .pipe(map((response: Response) => response.json()));
 }
-
-
-// postCar( car: Car) {
-//   const URI = `${this.apiUrl}`;
-//   const headers = new Headers();
-//   const body = JSON.stringify(
-//     {
-//   CodigoAresSun: car.data.CodigoAresSun,
-//   CodMarca: car.data.CodMarca,
-//   Modelo: car.data.Modelo,
-//   Ano: car.data.Ano,
-//   Color: car.data.Color,
-//   Placa: car.data.Placa,
-//   SerieMotor: car.data.SerieMotor,
-//   VIM: car.data.VIM,
-//   Cilindraje: car.data.Cilindraje,
-//   FechaDeMatricula: car.data.FechaDeMatricula,
-//   CodEnc: car.data.CodEnc,
-//   KmActual: car.data.KmActual,
-//   Ubicacion: car.data.Ubicacion
-// });
-
-//   console.log(body);
-//   headers.append('Content-Type', 'application/json');
-//   return this._http.post(URI, body)
-//   .pipe(map ((res: { json: () => void; }) => res.json()));
-// }
-
-/** POST: add a new hero to the database */
-// postCar (car: Car): Observable<Car> {
-//   return this._http.post<Car>(this.apiUrl, this.postCar, httpOptions)
-//     .pipe(
-//       // catchError(this.handleError('postCar', car))
-//     );
-// }
+removeCar(cAS){
+  console.log(cAS);
+  return this._http.delete(this.apiUrl,cAS);
+}
 
 }

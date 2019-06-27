@@ -4,7 +4,7 @@
 </Div>
 
 <div *ngIf="NCar">
-  <app-new-car (addList)='onaddCarro($event)'></app-new-car>
+  <app-new-car (addList)='toggleNew($event)'></app-new-car>
 </div>
 <div *ngIf="!NCar">
 
@@ -38,7 +38,8 @@
         <td >{{c.CodEnc}}</td>
         <td >{{c.KmActual}}</td>
         <td>{{c.Ubicacion}}</td>
-        <td><button mat-mini-fab color="warn">Del</button> <button mat-mini-fab color="accent">Mod</button></td>
+        <td><button mat-mini-fab color="warn" (click)="deleteRow(c.CodigoAresSun)">Del</button>
+          <button mat-mini-fab color="accent">Mod</button></td>
     </tr>
   </tbody>
     </table>

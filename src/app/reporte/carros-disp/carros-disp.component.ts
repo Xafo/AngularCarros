@@ -14,6 +14,7 @@ export class CarrosDispComponent implements OnInit {
 
   cars: CarrosModule;
   NCar: boolean;
+  cAS: {};
 
 toggleNew() {
 this.NCar = !this.NCar;
@@ -25,5 +26,9 @@ this.NCar = !this.NCar;
   getCar() {
     this.apiService.getCar()
     .subscribe((cars: any) => (this.cars = cars.data));
+  }
+  deleteRow(CodigoAresSun) {
+    this.cAS={'CodigoAresSun':CodigoAresSun};
+    this.apiService.removeCar(this.cAS);
   }
 }
