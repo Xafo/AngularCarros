@@ -43,9 +43,9 @@ postCar( xCar ) {
   .pipe(map((response: Response) => response.json()));
 }
 removeCar( cAS ) {
-  const x = {'CodigoAresSun':cAS}
-  console.log(x)
-  return this._http.post('http://localhost:3000/carros/del', x)
+  const xCAS = {'CodigoAresSun':cAS}
+  console.log(xCAS)
+  return this._http.post('http://localhost:3000/carros/del', xCAS)
   .pipe(map((response: Response) => response.json()));
 
 }
