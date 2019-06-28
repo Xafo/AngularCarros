@@ -2,7 +2,7 @@ import { Injectable,EventEmitter ,Output  } from '@angular/core';
 import {  of, throwError , Subject } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse, HttpClientModule } from '@angular/common/http';
 import { catchError, tap , filter, switchMap } from 'rxjs/operators';
-import { Observable } from 'rxjs/Rx'
+import { Observable } from 'rxjs/Rx';
 import { Car } from 'Server/Model/nCar';
 import { NewCarComponent } from './reporte/new-car/new-car.component';
 import { map } from 'rxjs/operators';
@@ -31,20 +31,23 @@ private handleError(error: HttpErrorResponse) {
   // return an observable with a user-facing error message
   return throwError(
     'Something bad happened; please try again later.');
-};
+}
 
 
 getCar() {
   return this._http.get(this.apiUrl);
 }
 
-postCar(xCar){
-  return this._http.post(this.apiUrl,xCar.value)
+postCar( xCar ) {
+  return this._http.post(this.apiUrl, xCar.value)
   .pipe(map((response: Response) => response.json()));
 }
-removeCar(cAS){
-  console.log(cAS);
-  return this._http.delete(this.apiUrl,cAS);
+removeCar( cAS ) {
+  const x = {'CodigoAresSun':cAS}
+  console.log(x)
+  return this._http.post('http://localhost:3000/carros/del', x)
+  .pipe(map((response: Response) => response.json()));
+
 }
 
 }

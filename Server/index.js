@@ -64,10 +64,10 @@ router.post('/carros', (req, res) => {
 
 
 //  Delete user
-router.delete('/carros', (req, res) => {
+router.post('/carros/del', (req, res) => {
   const cAS = req.body.CodigoAresSun;
-  console.log(req.body);
-  dbConn.query('DELETE FROM carrosrv WHERE carrosrv.CodigoAresSun = ?', cAS.value, function (error, results, fields) {
+  console.log(req.body.CodigoAresSun);
+  dbConn.query('DELETE FROM carrosrv WHERE carrosrv.CodigoAresSun = ?', cAS, function (error, results, fields) {
 	  if (error) throw error;
 	  res.end(JSON.stringify(results));
 	});

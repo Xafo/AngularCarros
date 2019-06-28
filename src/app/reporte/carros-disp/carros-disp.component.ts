@@ -28,7 +28,10 @@ this.NCar = !this.NCar;
     .subscribe((cars: any) => (this.cars = cars.data));
   }
   deleteRow(CodigoAresSun) {
-    this.cAS={'CodigoAresSun':CodigoAresSun};
-    this.apiService.removeCar(this.cAS);
+    this.apiService.removeCar(CodigoAresSun)
+    .subscribe(data => {alert(CodigoAresSun);
+    this.ngOnInit();
+  });
+
   }
 }
