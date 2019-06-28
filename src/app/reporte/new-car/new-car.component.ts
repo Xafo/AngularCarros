@@ -20,7 +20,6 @@ constructor(private apiService: ApiService) { }
   ngOnInit() { };
 
   onSubmit(nCar) {
-    console.log(nCar.value);
   this.apiService.postCar(nCar)
   .subscribe( data => {alert(nCar);
   this.ngOnInit();
