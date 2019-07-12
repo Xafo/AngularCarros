@@ -43,7 +43,7 @@ postCar( xCar ) {
   .pipe(map((response: Response) => response.json()));
 }
 removeCar( cAS ) {
-  const xCAS = {'CodigoAresSun':cAS}
+  const xCAS = { 'CodigoAresSun' : cAS}
   return this._http.post(this.apiUrl + '/del', xCAS)
   .pipe(map((response: Response) => response.json()));
 

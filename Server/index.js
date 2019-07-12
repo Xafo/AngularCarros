@@ -55,11 +55,28 @@ router.post('/carros', (req, res) => {
     'KmActual': req.body.KmActual,
     'Ubicacion': req.body.Ubicacion
   };
+
+if(  nCar.CodigoAresSun === '' ||
+nCar.CodMarca === '' ||
+nCar.Modelo === '' ||
+nCar.Ano === '' ||
+nCar.Color === '' ||
+nCar.Placa === '' ||
+nCar.SerieMotor === '' ||
+nCar.VIM === '' ||
+nCar.Cilindraje === '' ||
+nCar.FechaDeMatricula === '' ||
+nCar.CodEnc === '' ||
+nCar.KmActual === '' ||
+nCar.Ubicacion === ''){
+
+}else{
+
   dbConn.query('INSERT INTO carrosrv set ?', nCar, function (error, results, fields) {
 	  if (error) throw error;
 	  res.end(JSON.stringify(results));
 	});
-
+}
 });
 
 

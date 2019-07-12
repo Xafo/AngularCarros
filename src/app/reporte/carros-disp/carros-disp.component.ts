@@ -30,6 +30,8 @@ this.NCar = !this.NCar;
   deleteRow(CodigoAresSun) {
     this.apiService.removeCar(CodigoAresSun)
     .subscribe(data => {alert(CodigoAresSun);
+
+
     this.ngOnInit();
   });
 
