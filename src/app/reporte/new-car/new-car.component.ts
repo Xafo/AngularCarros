@@ -15,37 +15,17 @@ export class NewCarComponent implements OnInit {
 
 
 constructor(private apiService: ApiService) { }
-
-  a = false;
-  show = true;
+  a: boolean;
+  show: boolean;
 
   ngOnInit() { } ;
 
 
 
   onSubmit(nCar) {
-  if(
-    nCar.CodigoAresSun === ' ' ||
-    nCar.CodMarca === ' ' ||
-    nCar.Modelo === ' ' ||
-    nCar.Ano === ' ' ||
-    nCar.Color === ' ' ||
-    nCar.Placa === ' ' ||
-    nCar.SerieMotor === ' ' ||
-    nCar.VIM === ' ' ||
-    nCar.Cilindraje === ' ' ||
-    nCar.FechaDeMatricula === ' ' ||
-    nCar.CodEnc === ' ' ||
-    nCar.KmActual === ' ' ||
-    nCar.Ubicacion === ' '
-  ) {
-    this.a = !this.a;
-  } else {
   this.apiService.postCar(nCar)
   .subscribe( data => {alert(nCar);
   this.ngOnInit();
   });
-  }//fin del else
-
 }
 }

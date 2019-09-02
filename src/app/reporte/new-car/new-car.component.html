@@ -7,60 +7,116 @@
 
             <div class="form-group ">
               <label for="CodigoAresSun">Codigo Ares Sun</label>
-              <input type="text" id="CodigoAresSun" class="form-control" ngModel name="CodigoAresSun" ng-minlength="5" required >
+              <input type="text" id="CodigoAresSun" class="form-control" ngModel name="CodigoAresSun" ng-minlength="3" required pattern="[^\s]+[A-Z,a-z,1-9]{3,255}" />
+              <div *ngIf="carForm.controls['CodigoAresSun'].invalid && (carForm.controls['CodigoAresSun'].dirty || carForm.controls['CodigoAresSun'].touched)" class="alert alert-danger">
+                <div *ngIf="carForm.controls['CodigoAresSun'].errors.required">
+              </div>
             </div>
+            </div>
+
 
             <div class="form-group ">
                 <label for="CodMarca">Marca</label>
-                <input type="text" id="CodMarca" class="form-control" ngModel name="CodMarca" ng-minlength="5" required>
+                <input type="text" id="CodMarca" class="form-control" ngModel name="CodMarca" ng-minlength="5" required  pattern="[^\s]+[A-Z,a-z,1-9]{3,255}"/>
+                <div *ngIf="carForm.controls['CodMarca'].invalid && (carForm.controls['CodMarca'].dirty || carForm.controls['CodMarca'].touched)" class="alert alert-danger">
+                  <div *ngIf="carForm.controls['CodMarca'].errors.required">
+                </div>
+              </div>
+
             </div>
 
           <div class="form-group">
               <label for="Modelo">Modelo</label>
-              <input type="text" id="Modelo" class="form-control" ngModel name="Modelo" ng-minlength="5" required>
+              <input type="text" id="Modelo" class="form-control" ngModel name="Modelo" ng-minlength="5" required  pattern="[^\s]+[A-Z,a-z,1-9]{3,255}"/>
+              <div *ngIf="carForm.controls['Modelo'].invalid && (carForm.controls['Modelo'].dirty || carForm.controls['Modelo'].touched)" class="alert alert-danger">
+                <div *ngIf="carForm.controls['Modelo'].errors.required">
+              </div>
+            </div>
           </div>
           <div class="form-group">
               <label for="Ano">Año</label>
-              <input type="text" id="Ano" class="form-control" ngModel name="Ano" ng-minlength="5" required>
+              <input type="text" id="Ano" class="form-control" ngModel name="Ano" ng-minlength="5" required  pattern="[^\s]+[(19|20)\d{2}$]"/>
+              <div *ngIf="carForm.controls['Ano'].invalid && (carForm.controls['Ano'].dirty || carForm.controls['Ano'].touched)" class="alert alert-danger">
+                <div *ngIf="carForm.controls['Ano'].errors.required">
+              </div>
+            </div>
           </div>
           <div class="form-group">
               <label for="Color">Color</label>
-              <input type="text" id="Color" class="form-control" ngModel name="Color" ng-minlength="5" required>
+              <input type="text" id="Color" class="form-control" ngModel name="Color" ng-minlength="5" required  pattern="[^\s]+[A-Z,a-z,1-9]{3,255}"/>
+              <div *ngIf="carForm.controls['Color'].invalid && (carForm.controls['Color'].dirty || carForm.controls['Color'].touched)" class="alert alert-danger">
+                <div *ngIf="carForm.controls['Color'].errors.required">
+              </div>
+            </div>
           </div>
           <div class="form-group">
               <label for="Placa">Placa</label>
-              <input type="text" id="Placa" class="form-control" ngModel name="Placa" ng-minlength="5" required>
+              <input type="text" id="Placa" class="form-control" ngModel name="Placa" ng-minlength="5" required  pattern="[^\s]+[A-Z,a-z,1-9]{3,255}"/>
+              <div *ngIf="carForm.controls['Placa'].invalid && (carForm.controls['Placa'].dirty || carForm.controls['Placa'].touched)" class="alert alert-danger">
+                <div *ngIf="carForm.controls['Placa'].errors.required">
+              </div>
+            </div>
           </div>
           <div class="form-group">
             <label for="SerieMotor">Serie del Motor</label>
-            <input type="text" id="SerieMotor" class="form-control" ngModel name="SerieMotor" ng-minlength="5" required >
+            <input type="text" id="SerieMotor" class="form-control" ngModel name="SerieMotor" ng-minlength="5" required  pattern="[^\s]+[A-Z,a-z,1-9]{3,255}" />
+            <div *ngIf="carForm.controls['SerieMotor'].invalid && (carForm.controls['SerieMotor'].dirty || carForm.controls['SerieMotor'].touched)" class="alert alert-danger">
+              <div *ngIf="carForm.controls['SerieMotor'].errors.required">
+            </div>
+          </div>
         </div>
         <div class="form-group">
           <label for="VIM">VIM</label>
-          <input type="text" id="VIM" class="form-control" ngModel name="VIM" ng-minlength="5" required >
+          <input type="text" id="VIM" class="form-control" ngModel name="VIM" ng-minlength="5" required  pattern="[^\s]+[A-Z,a-z,1-9]{3,255}" />
+          <div *ngIf="carForm.controls['VIM'].invalid && (carForm.controls['VIM'].dirty || carForm.controls['VIM'].touched)" class="alert alert-danger">
+            <div *ngIf="carForm.controls['VIM'].errors.required">
+          </div>
+        </div>
       </div>
           <div class="form-group">
               <label for="Cilindraje">Cilindraje</label>
-              <input type="text" id="Cilindraje" class="form-control" ngModel name="Cilindraje" ng-minlength="5" required>
+              <input type="text" id="Cilindraje" class="form-control" ngModel name="Cilindraje" ng-minlength="5" required  pattern="[^\s]+[A-Z,a-z,1-9]{3,255}"/>
+              <div *ngIf="carForm.controls['Cilindraje'].invalid && (carForm.controls['Cilindraje'].dirty || carForm.controls['Cilindraje'].touched)" class="alert alert-danger">
+                <div *ngIf="carForm.controls['Cilindraje'].errors.required">
+              </div>
+            </div>
           </div>
           <div class="form-group">
               <label for="FechaDeMatricula">Matricula</label>
-              <input type="date" id="FechaDeMatricula" class="form-control" ngModel name="FechaDeMatricula" ng-minlength="5" required>
+              <input type="date" id="FechaDeMatricula" class="form-control" ngModel name="FechaDeMatricula" required  />
+              <div *ngIf="carForm.controls['FechaDeMatricula'].invalid && (carForm.controls['FechaDeMatricula'].dirty || carForm.controls['FechaDeMatricula'].touched)" class="alert alert-danger">
+                <div *ngIf="carForm.controls['FechaDeMatricula'].errors.required">
+              </div>
+            </div>
           </div>
           <div class="form-group">
               <label for="CodEnc">Encargado</label>
-              <input type="text" id="CodEnc" class="form-control" ngModel name="CodEnc" ng-minlength="5" required >
+              <input type="text" id="CodEnc" class="form-control" ngModel name="CodEnc" ng-minlength="5" required  pattern="[^\s]+[A-Z,a-z,1-9]{3,255}" />
+              <div *ngIf="carForm.controls['CodEnc'].invalid && (carForm.controls['CodEnc'].dirty || carForm.controls['CodEnc'].touched)" class="alert alert-danger">
+                <div *ngIf="carForm.controls['CodEnc'].errors.required">
+              </div>
+            </div>
           </div>
           <div class="form-group">
               <label for="KmActual">Kilometraje</label>
-              <input type="text" id="KmActual" class="form-control" ngModel name="KmActual" ng-minlength="5" required >
+              <input type="text" id="KmActual" class="form-control" ngModel name="KmActual" ng-minlength="5" required  pattern="[^\s]+[A-Z,a-z,1-9]{3,255}" />
+              <div *ngIf="carForm.controls['KmActual'].invalid && (carForm.controls['KmActual'].dirty || carForm.controls['KmActual'].touched)" class="alert alert-danger">
+                <div *ngIf="carForm.controls['KmActual'].errors.required">
+              </div>
+            </div>
           </div>
           <div class="form-group">
               <label for="Ubicacion">Ubicacion Actual</label>
-              <input type="text" id="Ubicacion" class="form-control" ngModel name="Ubicacion" ng-minlength="5" required>
+              <input type="text" id="Ubicacion" class="form-control" ngModel name="Ubicacion" ng-minlength="5" required  pattern="[^\s]+[A-Z,a-z,1-9]{3,255}"/>
+
+              <div *ngIf="carForm.controls['Ubicacion'].invalid && (carForm.controls['Ubicacion'].dirty || carForm.controls['Ubicacion'].touched)" class="alert alert-danger">
+                <div *ngIf="carForm.controls['Ubicacion'].errors.required">
+              </div>
+            </div>
+
           </div>
 
-          <button class="btn btn-primary" type="submit" (click)="onSubmit()">Submit</button>
+          <button class="btn btn-primary" type="submit" [disabled]="carForm.pristine || carForm.invalid" (click)="onSubmit()">Submit</button>
         </form>
       </div>
     </div>

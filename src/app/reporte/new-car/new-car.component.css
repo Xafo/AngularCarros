@@ -11,3 +11,12 @@
 input{
   width: 50rem;
 }
+input.ng-invalid {
+  border-color: rgb(255, 0, 43);
+}
+input.ng-valid {
+  border-color: rgb(103, 227, 255);
+}
+button.ng-invalid{
+  color:grey;
+}
